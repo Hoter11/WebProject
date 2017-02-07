@@ -1,6 +1,6 @@
 /* CSS framework based on udacity "Intro to HTML and CSS" course */
 
-*sdf{
+*sdfas{
     outline: 1px solid red !important;
 }
 
@@ -12,8 +12,16 @@
 }
 
 @media only screen and (max-width: 750px) {
-    p {
-        display: none;
+    .entry-title {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .entry-title {
+        padding: 25%;
+        text-align: center;
     }
 }
 
