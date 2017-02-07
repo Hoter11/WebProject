@@ -25,6 +25,30 @@
     }
 }
 
+@media only screen and (max-width: 520px) {
+    .header-name {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 520px) {
+    .header-name {
+        text-align: right;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px){
+    .header-name {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .header-name {
+        text-align: right;
+    }
+}
+
 p{
     padding: 10px;
     margin: 10px;
@@ -37,6 +61,14 @@ hr {
     /* Set the hr color */
     color: #333;
     background-color: #333;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.header-name {
+    font-family: 'Press Start 2P', cursive;
 }
 
 .icon-image {
