@@ -1,0 +1,28 @@
+[
+    {
+        "model": "blog.Entry",
+        "pk": 1,
+        "fields": {
+            "identifier": "AA01",
+            "creation_date": "2017-02-08 18:51+0200",
+            "title": "Introduction - The Web",
+            "hide": false,
+            "type": "Project",
+            "image": "images/introduction-entry.svg",
+            "text": "HOLA :)"
+        }
+    },
+    {
+        "model": "blog.Entry",
+        "pk": 2,
+        "fields": {
+            "identifier": "AA02",
+            "creation_date": "2017-02-08 15:57+0200",
+            "title": "Entry Name",
+            "hide": false,
+            "type": "Opinion",
+            "image": "images/eevee.jpg",
+            "text": "ADEU :)"
+        }
+    }
+]
