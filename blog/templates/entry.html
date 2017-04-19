@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<!-- Introduction - The Web v1.0-->
+<!-- Introduction - The Web v2.0 - dinamic with django-->
+
+{% load static %}
 <html>
 <head lang="en">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'blog/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <title>{{ entry.title }}</title>
 </head>
@@ -29,7 +31,9 @@
         <!-- Content here -->
         <div class="row">
             <div class="col-md-5">
-                <img class="img_responsive icon-image" src="{{ entry.image }}" alt="Entry main image"/>
+                {% with "blog/images/"|add:entry.image as image %}
+                <img class="img_responsive icon-image" src="{% static image %}" alt="Entry main image"/>
+                {% endwith %}
             </div>
             <div class="col-md-7">
                 <h2 class="entry-title">{{ entry.title }}</h2>
@@ -37,7 +41,7 @@
         </div>
 
         <div class="row">
-            {{ entry.text }}
+            {{ entry.text |safe}} <!-- 'safe' take HTML is not escaped -->
         </div>
 
 
@@ -48,9 +52,9 @@
         </div>
 
         <div class="row" style="margin-bottom:50px">
-            <div class="col-md-4"><a href="index.html"><h4 align="center">Home</h4></a></div>
-            <div class="col-md-4"><a href="about.html"><h4 align="center">About me</h4></a></div>
-            <div class="col-md-4"><a href="contact.html"><h4 align="center">Contact</h4></a></div>
+            <div class="col-md-4"><a href="{% url 'home' %}"><h4 align="center">Home</h4></a></div>
+            <div class="col-md-4"><a href="{% url 'about' %}"><h4 align="center">About me</h4></a></div>
+            <div class="col-md-4"><a href="{% url 'contact' %}"><h4 align="center">Contact</h4></a></div>
         </div>
     </div>
     </body>

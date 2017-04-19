@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Page based on udacity "Intro to HTML and CSS" course -->
+<!-- v2.0 dinamic with django -->
+
+{% load static %}
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'blog/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12"><h1 align="center" style="padding:10px;margin-top:30px;">A Random Blog in the Net</h1></div>
+
+        <div class="col-md-6 col-sm-12"><h3 class="header-name">Roc Granada Verdú</h2></div>
+    </div>
+
+    <font size="2" >My graphical design skills suck... :(</font>
+
+    <div class="row">
+        <hr>
+    </div>
+
+
+    <div class="row">
+        {% if entries %}
+            {% for entry in entries %}
+                <div class="col-md-6 col-xs-12 col-sm-12">
+                <div class="row">
+                    {% with "blog/images/"|add:entry.image as image %}
+                    <div class="col-md-6"><a href="{% url 'entries' entry.identifier %}"><img class="img_responsive icon-image" src="{% static image %}" /></a></div>
+                    {% endwith %}
+                    <div class="col-md-6"><p>{{ entry.title }}</p></div>
+                </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No Flights are available.</p>
+        {% endif %}
+    </div>
+
+    <div class="row">
+        <hr>
+    </div>
+    <div class="row" style="margin-bottom:50px">
+        <div class="col-md-4"><a href="{% url 'home' %}"><h4 align="center">Home</h4></a></div>
+        <div class="col-md-4"><a href="{% url 'about' %}"><h4 align="center">About me</h4></a></div>
+        <div class="col-md-4"><a href="{% url 'contact' %}"><h4 align="center">Contact</h4></a></div>
+    </div>
+  </div>
+</body>
+</html>
