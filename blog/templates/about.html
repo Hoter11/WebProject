@@ -72,7 +72,14 @@
         <div class="row" style="margin-bottom:50px">
             <div class="col-md-4"><a href="{% url 'home' %}"><h4 align="center">Home</h4></a></div>
             <div class="col-md-4"><a href="{% url 'about' %}"><h4 align="center">About me</h4></a></div>
-            <div class="col-md-4"><a href="{% url 'contact' %}"><h4 align="center">Contact</h4></a></div>
+            <div class="col-md-4">
+                <h4 align="center">
+                    <a href="mailto:granadaroc96@gmail.com" target="_blank"><img src = "{% static 'blog/images/icons/email_icon.png' %}" style='horizontal-align: middle;width:48px;height:48px;'/></a>
+                    <a href="http://twitter.com/roc_ete" target="_blank"><img src = "{% static 'blog/images/icons/twitter_icon.png' %}" style='horizontal-align: middle;width:40px;height:40px;'/></a>
+                    <a href="https://github.com/Hoter11" target="_blank"><img src = "{% static 'blog/images/icons/github_icon.png' %}"  style='horizontal-align: middle;width:48px;height:48px;'/></a>
+                    <a href="https://www.linkedin.com/in/roc-granada" target="_blank"><img src = "{% static 'blog/images/icons/linkedin_icon2.png' %}"  style='horizontal-align: middle;width:49px;height:40px;'/></a>
+                </h4>
+            </div>
         </div>
     </div>
 </body>
