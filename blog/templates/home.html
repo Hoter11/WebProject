@@ -35,7 +35,7 @@
             {% for entry in entries %}
                 <div class="col-md-6 col-xs-12 col-sm-12">
                 <div class="row">
-                    {% with "blog/images/"|add:entry.image as image %}
+                    {% with "blog/images/entries/"|add:entry.image as image %}
                     <div class="col-md-6"><a href="{% url 'entries' entry.identifier %}"><img class="img_responsive icon-image" src="{% static image %}" /></a></div>
                     {% endwith %}
                     <div class="col-md-6"><p>{{ entry.title }}</p></div>

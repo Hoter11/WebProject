@@ -25,7 +25,7 @@ SECRET_KEY = '+=+2b&fq7ytbg*m*sc+71a6nxz0bgu9p0bug#30!zc_z=ves*n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hoter11.eu.pythonanywhere.com']
 
 
 # Application definition
@@ -118,4 +118,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+# Comment for local usage
+STATIC_ROOT = "/home/Hoter11/WebProject/blog/static"
 STATIC_URL = '/static/'
