@@ -14,7 +14,7 @@ class Entry(models.Model):
     image = models.CharField(max_length=30)
 
     def get_text(self):
-        return open(f'blog/fixtures/texts/{self.identifier}.md').read()
+        return open(f'blog/static/blog/texts/{self.identifier}.md').read()
 
     def __str__(self):
-        return "["+self.title+" | "+self.type+" | "+self.creation_date+" | Hide: "+self.hide+"]"
+        return f'[{self.title} | {self.type} | {self.creation_date.strftime("%Y-%m-%d %H:%M:%S")} | Hide: {self.hide}'
