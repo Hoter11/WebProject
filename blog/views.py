@@ -1,27 +1,27 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Entry
 
-# Create your views here.
+import markdown
+
 
 def home(request):
-    entries = Entry.objects.order_by('creation_date')
+    home_entries = Entry.objects.order_by('creation_date')
     context = {
-        'entries':entries,
+        'entries': home_entries,
     }
     return render(request, 'home.html', context)
 
-def entries(request,id):
-    entry = Entry.objects.get(identifier=id)
-    context = {
-        'entry':entry,
-    }
-    return render(request,'entry.html',context)
 
-def contact(request):
-    context = {}
-    return render(request,'contact.html',context)
+def entries(request, entry_id):
+    entry = Entry.objects.get(identifier=entry_id)
+    entry_text = markdown.markdown(entry.get_text())
+    context = {
+        'entry': entry,
+        'entry_text': entry_text,
+    }
+    return render(request, 'entry.html', context)
+
 
 def about(request):
     context = {}
-    return render(request,'about.html',context)
+    return render(request, 'about.html', context)

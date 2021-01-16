@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Introduction - The Web v2.0 - dinamic with django-->
+<!-- v2.0 - dinamic with django-->
 
 {% load static %}
 <html>
@@ -31,7 +31,7 @@
         <!-- Content here -->
         <div class="row">
             <div class="col-md-5">
-                {% with "blog/images/"|add:entry.image as image %}
+                {% with "blog/images/entries/"|add:entry.image as image %}
                 <img class="img_responsive icon-image" src="{% static image %}" alt="Entry main image"/>
                 {% endwith %}
             </div>
@@ -39,14 +39,16 @@
                 <h2 class="entry-title">{{ entry.title }}</h2>
             </div>
         </div>
+        <div class="row">
+            <p></p>
+        </div>
 
         <div class="row">
-            {{ entry.text |safe}} <!-- 'safe' take HTML is not escaped -->
+            {{ entry_text |safe}} <!-- 'safe': take HTML that is not escaped -->
         </div>
 
 
         <!-- Content end -->
-
         <div class="row">
             <hr>
         </div>

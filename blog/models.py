@@ -4,6 +4,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Entry(models.Model):
     identifier = models.CharField(max_length=4)
     creation_date = models.DateTimeField()
@@ -11,7 +12,9 @@ class Entry(models.Model):
     hide = models.BooleanField()
     type = models.CharField(max_length=30)
     image = models.CharField(max_length=30)
-    text = models.CharField(max_length=1000)
+
+    def get_text(self):
+        return open(f'blog/fixtures/texts/{self.identifier}.md').read()
 
     def __str__(self):
         return "["+self.title+" | "+self.type+" | "+self.creation_date+" | Hide: "+self.hide+"]"
