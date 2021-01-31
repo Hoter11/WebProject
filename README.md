@@ -5,7 +5,7 @@
 # About
 I started this blog for practise after the [Udacity](https://www.udacity.com/) course [Intro to HTML and CSS](https://www.udacity.com/course/intro-to-html-and-css--ud001) while I was in university.
 
-With time, it has evolved, and I switch from a completely static blog, to a dynamic one using [Django](https://www.djangoproject.com/) and [Bootstrap](http://getbootstrap.com). Currently the site is hosted on [Python](eu.pythonanywhere.com).
+With time, it has evolved, and I switch from a completely static blog, to a dynamic one using [Django](https://www.djangoproject.com/) and [Bootstrap](https://getbootstrap.com). Currently the site is hosted on [Python Anywhere](https://eu.pythonanywhere.com).
 
 Dependency management is done using [Pipenv](https://pipenv.pypa.io). 
 
