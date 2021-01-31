@@ -2,8 +2,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-# Create your models here.
-
 
 class Entry(models.Model):
     identifier = models.CharField(max_length=4)
@@ -12,9 +10,10 @@ class Entry(models.Model):
     hide = models.BooleanField()
     type = models.CharField(max_length=30)
     image = models.CharField(max_length=30)
+    format = models.CharField(max_length=10, default='md')
 
-    def get_text(self):
-        return open(f'blog/static/blog/texts/{self.identifier}.md').read()
+    def get_file(self):
+        return f'{self.identifier}.{self.format}'
 
     def __str__(self):
         return f'[{self.title} | {self.type} | {self.creation_date.strftime("%Y-%m-%d %H:%M:%S")} | Hide: {self.hide}'

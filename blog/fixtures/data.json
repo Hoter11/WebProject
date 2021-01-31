@@ -6,9 +6,10 @@
             "identifier": "AA01",
             "creation_date": "2017-02-08 18:51+0200",
             "title": "Introduction - The Web",
-            "hide": false,
+            "hide": true,
             "type": "Project",
-            "image": "introduction-entry.svg"
+            "image": "introduction-entry.svg",
+            "format": "md"
         }
     },
     {
@@ -16,11 +17,12 @@
         "pk": 2,
         "fields": {
             "identifier": "AA02",
-            "creation_date": "2017-02-08 15:57+0200",
-            "title": "Entry Name",
+            "creation_date": "2021-01-25 15:57+0100",
+            "title": "Data Quality in Data Engineering",
             "hide": false,
             "type": "Opinion",
-            "image": "eevee.jpg"
+            "image": "data-quality.jpg",
+            "format": "html"
         }
     }
 ]

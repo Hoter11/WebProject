@@ -1,11 +1,9 @@
 from django.shortcuts import render
 from .models import Entry
 
-import markdown
-
 
 def home(request):
-    home_entries = Entry.objects.order_by('creation_date')
+    home_entries = Entry.objects.filter(hide=False).order_by('creation_date')
     context = {
         'entries': home_entries,
     }
@@ -14,10 +12,9 @@ def home(request):
 
 def entries(request, entry_id):
     entry = Entry.objects.get(identifier=entry_id)
-    entry_text = markdown.markdown(entry.get_text())
     context = {
         'entry': entry,
-        'entry_text': entry_text,
+        'entry_file': entry.get_file(),
     }
     return render(request, 'entry.html', context)
 

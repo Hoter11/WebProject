@@ -25,7 +25,7 @@ SECRET_KEY = '+=+2b&fq7ytbg*m*sc+71a6nxz0bgu9p0bug#30!zc_z=ves*n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hoter11.eu.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'hoter11.eu.pythonanywhere.com']
 
 
 # Application definition
@@ -55,7 +55,8 @@ ROOT_URLCONF = 'WebProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'blog/static/blog/texts/'),
+                 os.path.join(BASE_DIR, 'blog/templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
