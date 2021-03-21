@@ -4,12 +4,12 @@
         "pk": 1,
         "fields": {
             "identifier": "AA01",
-            "creation_date": "2017-02-08 18:51+0200",
-            "title": "Introduction - The Web",
-            "hide": true,
-            "type": "Project",
-            "image": "introduction-entry.svg",
-            "format": "md"
+            "creation_date": "2021-01-25 15:57+0100",
+            "title": "Data Quality in Data Engineering",
+            "hide": false,
+            "type": "Opinion",
+            "image": "TitleDataQuality.jpg",
+            "format": "html"
         }
     },
     {
@@ -17,11 +17,11 @@
         "pk": 2,
         "fields": {
             "identifier": "AA02",
-            "creation_date": "2021-01-25 15:57+0100",
-            "title": "Data Quality in Data Engineering",
+            "creation_date": "2021-03-21 18:51+0200",
+            "title": "Trigger Airflow DAGs from S3 events",
             "hide": false,
             "type": "Opinion",
-            "image": "data-quality.jpg",
+            "image": "TitleS3EventAirflow.png",
             "format": "html"
         }
     }
