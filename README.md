@@ -26,6 +26,7 @@ python manage.py loaddata data.json
 ```
 
 # Todo
+- Reduce title images size
 - Add testing
 - Improve header
 
